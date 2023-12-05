@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Simple Text Editor</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div id="undoRedoContainer">
+        <button onclick="undo()">Undo</button>
+        <button onclick="redo()">Redo</button>
+    </div>
+
+    <div id="toolbar">
+        <button onclick="formatText('bold')">Bold</button>
+        <button onclick="formatText('italic')">Italic</button>
+        <button onclick="formatText('underline')">Underline</button>
+        <button onclick="formatText('insertOrderedList')">Numbered List</button>
+        <button onclick="formatText('insertUnorderedList')">Bullet List</button>
+
+        <label for="fontSizePicker">Font Size:</label>
+        <input type="number" id="fontSizePicker" min="1" max="7" value="3" oninput="changeFontSize(this.value)">
+        
+        <label for="fontColorPicker">Font Color:</label>
+        <input type="color" id="fontColorPicker" value="#000000" onchange="changeFontColor(this.value)">
+    </div>
+
+    <div id="editor-container">
+        <div id="editor" contenteditable="true"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
